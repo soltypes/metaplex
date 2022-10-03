@@ -45,7 +45,7 @@ export const ENDPOINTS: Array<Endpoint> = [
   {
     name: 'mainnet-beta',
     label: 'mainnet-beta',
-    url: 'https://api.metaplex.solana.com/',
+    url: process.env.NEXT_PUBLIC_ALCHEMY_MAINNET ||  'https://api.metaplex.solana.com/',
     chainId: ChainId.MainnetBeta,
   },
   {
@@ -57,7 +57,7 @@ export const ENDPOINTS: Array<Endpoint> = [
   {
     name: 'devnet',
     label: 'devnet',
-    url: clusterApiUrl('devnet'),
+    url:  process.env.NEXT_PUBLIC_ALCHEMY_DEVNET || clusterApiUrl('devnet'),
     chainId: ChainId.Devnet,
   },
 ];
